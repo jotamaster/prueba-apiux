@@ -50,6 +50,9 @@ export const mutations = {
   setAllCounters: (state, counters) => {
     state.counters = counters
   },
+  setAllFilters: (state, filters) => {
+    state.filters = filters
+  },
   deleteCounter: (state, counter) => {
     state.counters = state.counters.filter((c) => {
       return c.name != counter.name;
@@ -134,8 +137,13 @@ export const mutations = {
     sessionStorage.setItem('filters', JSON.stringify(state.filters))
   },
   showWithRange: (state, range) => {
+
     let fromValue = range.from ? range.from : 0;
     let toValue = range.toValue ? range.toValue : 20;
+    state.filters.from =fromValue
+    state.filters.toValue = toValue
+    state.filters.byName = range.byName
+
 
     state.counters = state.counters.map((c) => {
       if (c.value < fromValue || c.value > toValue) {
@@ -172,6 +180,9 @@ export const actions = {
   },
   setAllCounters({ commit }, counters) {
     commit("setAllCounters", counters);
+  },
+  setAllFilters({ commit }, filters) {
+    commit("setAllFilters", filters);
   },
   setOrderBy({ commit }, type) {
     commit("setOrderBy", type);

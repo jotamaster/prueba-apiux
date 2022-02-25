@@ -23,6 +23,10 @@ export default {
       if(localStorage.counters){
         this.$store.dispatch("counter/setAllCounters",JSON.parse(localStorage.counters));
       }
+      if(sessionStorage.filters){
+        console.log(sessionStorage.filters)
+         this.$store.dispatch("counter/setAllFilters",JSON.parse(sessionStorage.filters));
+      }
     }
   }
 }

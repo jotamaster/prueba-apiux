@@ -19,6 +19,12 @@ export default {
 
 <style>
 main {
-  display:flex
+  display:flex;
+  flex-direction: row;
+}
+@media only screen and (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
 }
 </style>

@@ -37,8 +37,14 @@ table {
   border-collapse: collapse;
   width: 100%;
   background-color: #fafafa;
+    overflow-x: auto;
+    white-space: nowrap;
 }
-
+@media only screen and (max-width: 600px) {
+  table {
+    display: block;
+  }
+}
 td,
 th {
   border: 1px solid #dddddd;

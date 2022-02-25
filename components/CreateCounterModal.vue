@@ -71,6 +71,12 @@ export default {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.623);
 }
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 114vw;
+    height: 130vh;
+  }
+}
 .dialog {
   padding: 20px;
   background: white;

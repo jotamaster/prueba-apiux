@@ -38,6 +38,11 @@ export default {
     display: flex;
     justify-content: space-between;
 }
+@media only screen and (max-width: 600px) {
+  .header {
+    width: 100%;
+  }
+}
 .title{
     padding: 0;
     margin:0;
